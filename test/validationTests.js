@@ -5,7 +5,7 @@
     setupInput = function(type, value) {
       return $("<input type='" + type + "' value='" + value + "' />");
     };
-    return test("Name Input Test", (function(_this) {
+    test("Name Input Test", (function(_this) {
       return function() {
         equal(setupInput('text', 'John Doe').isValidAlphaNumericInput(), true, "'John Doe' is Valid!");
         equal(setupInput('text', 'UPPERMAN').isValidAlphaNumericInput(), true, "'UPPERMAN' is Valid!");
@@ -14,6 +14,17 @@
         equal(setupInput('text', 'Ke$ha').isValidAlphaNumericInput(), false, "'Ke$ha' is not a valid name.");
         equal(setupInput('text', '!@#$%^&*()').isValidAlphaNumericInput(), false, "'!@#$%^&*()' is not a valid name.");
         return equal(setupInput('text', '<a href="http://www.google.com>BadLink</a>"').isValidAlphaNumericInput(), false, "html is not a valid name.");
+      };
+    })(this));
+    return test("Email input Test", (function(_this) {
+      return function() {
+        equal(setupInput('email', 'John@email.com').isValidEmailInput(), true, "'John@email.com' is Valid!");
+        equal(setupInput('email', '123Joe@email.com').isValidEmailInput(), true, "'123Joe@email.com' is Valid!");
+        equal(setupInput('email', 'John doe@email.com').isValidEmailInput(), false, "'John doe@email.com' is Invalid!");
+        equal(setupInput('email', 'John@').isValidEmailInput(), false, "'John@' is Invalid!");
+        equal(setupInput('email', 'John.com').isValidEmailInput(), false, "'John.com' is Invalid!");
+        equal(setupInput('email', '@.com').isValidEmailInput(), false, "'@.com' is Invalid!");
+        return equal(setupInput('email', '@doe.com').isValidEmailInput(), false, "'@doe.com' is Invalid!");
       };
     })(this));
   });
