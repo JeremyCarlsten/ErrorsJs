@@ -18,4 +18,19 @@
     return allowedPattern.test(value);
   };
 
+  $.fn.isValidPhoneInput = function() {
+    var allowedPattern, isAllDigits, isDelemited, value, _ref;
+    allowedPattern = /^[\d\s\.\-\(\)]+$/;
+    isAllDigits = /[\d]+/;
+    isDelemited = /^[\d\s\.\-]+/;
+    value = $(this).val().trim();
+    if (allowedPattern.test(value)) {
+      value = value.replace(/[\s\.\-\(\)]+/g, "");
+      if (isAllDigits.test(value) && ((_ref = value.length) === 7 || _ref === 10 || _ref === 11)) {
+        return true;
+      }
+    }
+    return false;
+  };
+
 }).call(this);
