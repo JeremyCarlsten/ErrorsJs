@@ -11,6 +11,14 @@ $(document).ready ->
     equal(setupInput('text', '!@#$%^&*()').isValidAlphaNumericInput(), false, "'!@#$%^&*()' is not valid text.");
     equal(setupInput('text', '<a href="http://www.google.com>BadLink</a>"').isValidAlphaNumericInput(), false, "html is not valid text.");
 
+  test "Numeric Input Test", =>
+    equal(setupInput('text', '123456').isValidNumber(), true, "'123456' is Valid!");
+    equal(setupInput('text', 'Ke$ha').isValidNumber(), false, "'Ke$ha' is not a valid number.");
+    equal(setupInput('text', 'abcd').isValidNumber(), false, "'abcd' is not a valid number.");
+    equal(setupInput('text', 'ABCD').isValidNumber(), false, "'ABCD' is not a valid number.");
+    equal(setupInput('text', '!@#$%^&*()').isValidNumber(), false, "'!@#$%^&*()' is not a valid number.");
+    equal(setupInput('text', '<a href="http://www.google.com>BadLink</a>"').isValidNumber(), false, "html is not a valid number.");
+
   test "Email input Test", =>
     equal(setupInput('email', 'John@email.com').isValidEmailInput(), true, "'John@email.com' is Valid!");
     equal(setupInput('email', '123Joe@email.com').isValidEmailInput(), true, "'123Joe@email.com' is Valid!");

@@ -16,6 +16,16 @@
         return equal(setupInput('text', '<a href="http://www.google.com>BadLink</a>"').isValidAlphaNumericInput(), false, "html is not valid text.");
       };
     })(this));
+    test("Numeric Input Test", (function(_this) {
+      return function() {
+        equal(setupInput('text', '123456').isValidNumber(), true, "'123456' is Valid!");
+        equal(setupInput('text', 'Ke$ha').isValidNumber(), false, "'Ke$ha' is not a valid number.");
+        equal(setupInput('text', 'abcd').isValidNumber(), false, "'abcd' is not a valid number.");
+        equal(setupInput('text', 'ABCD').isValidNumber(), false, "'ABCD' is not a valid number.");
+        equal(setupInput('text', '!@#$%^&*()').isValidNumber(), false, "'!@#$%^&*()' is not a valid number.");
+        return equal(setupInput('text', '<a href="http://www.google.com>BadLink</a>"').isValidNumber(), false, "html is not a valid number.");
+      };
+    })(this));
     test("Email input Test", (function(_this) {
       return function() {
         equal(setupInput('email', 'John@email.com').isValidEmailInput(), true, "'John@email.com' is Valid!");

@@ -6,6 +6,12 @@ $.fn.isValidAlphaNumericInput = ->
 
   allowedPattern.test(value)
 
+$.fn.isValidNumber = ->
+  allowedPattern = /^[0-9]+$/i
+  value = $(this).val().trim()
+
+  allowedPattern.test(value)
+
 
 $.fn.isValidEmailInput = ->
   allowedPattern = /^[\w\-\_\.\d]+@\w+.\w{3}$/

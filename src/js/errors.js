@@ -11,6 +11,13 @@
     return allowedPattern.test(value);
   };
 
+  $.fn.isValidNumber = function() {
+    var allowedPattern, value;
+    allowedPattern = /^[0-9]+$/i;
+    value = $(this).val().trim();
+    return allowedPattern.test(value);
+  };
+
   $.fn.isValidEmailInput = function() {
     var allowedPattern, value;
     allowedPattern = /^[\w\-\_\.\d]+@\w+.\w{3}$/;
