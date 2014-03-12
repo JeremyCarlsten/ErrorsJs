@@ -2,7 +2,7 @@
   "name": "ErrorsJs",
   "version": "0.1.0",
    "scripts": {
-        "test": "grunt test --verbose"
+        "test": "grunt test --verbose --force"
     },
   "devDependencies": {
     "grunt": "^0.4.3",
