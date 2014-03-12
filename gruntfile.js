@@ -18,7 +18,6 @@ module.exports = function (grunt) {
         jshint: {
             files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
             options: {
-                // options here to override JSHint defaults
                 globals: {
                     jQuery: true,
                     console: true,
@@ -26,15 +25,23 @@ module.exports = function (grunt) {
                     document: true
                 }
             }
+        },
+        coffee: {
+            compile: {
+                files: {
+                    'src/js/Errors.js': 'src/coffee/Errors.coffee',
+                    'test/validationTests.js': 'test/src/validationTests.coffee'
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-qunit');
 
-    grunt.registerTask('test', ['jshint', 'qunit']);
-
-    grunt.registerTask('default', ['jshint', 'qunit', 'uglify']);
+    grunt.registerTask('test', ['coffee', 'jshint', 'qunit']);
+    grunt.registerTask('default', ['coffee', 'jshint', 'qunit', 'uglify']);
 
 };
