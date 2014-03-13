@@ -3,16 +3,16 @@ $ = jQuery
 matchesPattern = (value, allowedPattern) ->
   allowedPattern.test(value)
 
-$.fn.isValidAlphaNumericInput = ->
+$.fn.isValidAlphaNumericText = ->
   matchesPattern($(this).val().trim(), /^[a-zA-z0-9\s]+$/i)
 
 $.fn.isValidNumber = ->
   matchesPattern($(this).val().trim(), /^[0-9]+$/i)
 
-$.fn.isValidEmailInput = ->
+$.fn.isValidEmail = ->
   matchesPattern($(this).val().trim(), /^[\w\-\_\.\d]+@\w+.\w{3}$/)
 
-$.fn.isValidPhoneInput = ->
+$.fn.isValidPhoneNumber = ->
   allowedPattern = /^[\d\s\.\-\(\)]+$/
   isAllDigits = /[\d]+/
   isDelemited = /^[\d\s\.\-]+/

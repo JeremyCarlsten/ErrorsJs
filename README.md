@@ -33,7 +33,7 @@ Example 1:
     $(document).ready(function(){
     
       $("full-name").on('change', function(event){
-        if($("full-name").isValidAlphaNumericInput()){
+        if($("full-name").isValidAlphaNumericText()){
           alert("It's All Good");
         else{
           event.preventDefault();
@@ -58,7 +58,7 @@ Example 2 (They are all pretty much the same, change the method):
     $(document).ready(function(){
     
       $("email").on('change', function(event){
-        if($("full-name").isValidEmailInput()){
+        if($("full-name").isValidEmail()){
           alert("It's All Good");
         else{
           event.preventDefault();
@@ -73,7 +73,7 @@ Example 2 (They are all pretty much the same, change the method):
 Methods
 -------
 
-######isValidAlphaNumericInput()
+######isValidAlphaNumericText()
 
   Returns: Boolean
 ```javascript
@@ -87,14 +87,14 @@ Methods
   var valid = "123456798".isValidNumber();
 ```
 
-######isValidEmailInput()
+######isValidEmail()
 
   Returns: Boolean
 ```javascript
   var valid = "johnDoe@email.com".isValidEmailInput();
 ```
 
-######isValidPhoneInput()
+######isValidPhoneNumber()
 
   Returns: Boolean
 ```javascript

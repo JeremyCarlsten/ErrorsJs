@@ -7,7 +7,7 @@
     return allowedPattern.test(value);
   };
 
-  $.fn.isValidAlphaNumericInput = function() {
+  $.fn.isValidAlphaNumericText = function() {
     return matchesPattern($(this).val().trim(), /^[a-zA-z0-9\s]+$/i);
   };
 
@@ -15,11 +15,11 @@
     return matchesPattern($(this).val().trim(), /^[0-9]+$/i);
   };
 
-  $.fn.isValidEmailInput = function() {
+  $.fn.isValidEmail = function() {
     return matchesPattern($(this).val().trim(), /^[\w\-\_\.\d]+@\w+.\w{3}$/);
   };
 
-  $.fn.isValidPhoneInput = function() {
+  $.fn.isValidPhoneNumber = function() {
     var allowedPattern, isAllDigits, isDelemited, value, _ref;
     allowedPattern = /^[\d\s\.\-\(\)]+$/;
     isAllDigits = /[\d]+/;
