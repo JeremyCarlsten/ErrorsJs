@@ -8,7 +8,7 @@ A Client Side jquery plugin for handling errors.
 How to Use 
 ----------
 
-Step 1: Download the [minified js] (https://github.com/JeremyCarlsten/ErrorsJs/blob/master/errors-1.0.min.js) (Right click and save as)
+Step 1: Download the [minified js] (https://github.com/JeremyCarlsten/ErrorsJs/blob/master/distribution/errors-1.1.min.js) (Right click and save as)
 
 Step 2: Ensure you have [jquery](http://jquery.com/) included on your page
 

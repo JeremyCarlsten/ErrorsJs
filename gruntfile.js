@@ -8,7 +8,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: [
-                    {src: 'src/js/errors.js', dest: 'errors-1.1.min.js'}
+                    {src: 'src/js/errors.js', dest: 'distribution/errors-1.1.min.js'}
                 ]
             }
         },
