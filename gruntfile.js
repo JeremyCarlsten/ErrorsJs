@@ -4,11 +4,11 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
             options: {
-                banner: '/*\n/  Author: Jeremy Carlsten \n/  Version: 0.1.0 \n*/\n'
+                banner: '/*\n/  Author: Jeremy Carlsten \n/  Version: 0.1.1 \n*/\n'
             },
             dist: {
                 files: [
-                    {src: 'src/js/errors.js', dest: 'errors-1.0.min.js'}
+                    {src: 'src/js/errors.js', dest: 'errors-1.1.min.js'}
                 ]
             }
         },

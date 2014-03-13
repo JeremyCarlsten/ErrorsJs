@@ -6,13 +6,13 @@
     };
     test("AlphaNumeric Input Test", (function(_this) {
       return function() {
-        equal(setupInput('text', 'John Doe').isValidAlphaNumericInput(), true, "'John Doe' is Valid!");
-        equal(setupInput('text', 'UPPERMAN').isValidAlphaNumericInput(), true, "'UPPERMAN' is Valid!");
-        equal(setupInput('text', 'lowerman').isValidAlphaNumericInput(), true, "'lowerman' is Valid!");
-        equal(setupInput('text', '').isValidAlphaNumericInput(), false, "'' is not valid text.");
-        equal(setupInput('text', 'Ke$ha').isValidAlphaNumericInput(), false, "'Ke$ha' is not valid text.");
-        equal(setupInput('text', '!@#$%^&*()').isValidAlphaNumericInput(), false, "'!@#$%^&*()' is not valid text.");
-        return equal(setupInput('text', '<a href="http://www.google.com>BadLink</a>"').isValidAlphaNumericInput(), false, "html is not valid text.");
+        equal(setupInput('text', 'John Doe').isValidAlphaNumericText(), true, "'John Doe' is Valid!");
+        equal(setupInput('text', 'UPPERMAN').isValidAlphaNumericText(), true, "'UPPERMAN' is Valid!");
+        equal(setupInput('text', 'lowerman').isValidAlphaNumericText(), true, "'lowerman' is Valid!");
+        equal(setupInput('text', '').isValidAlphaNumericText(), false, "'' is not valid text.");
+        equal(setupInput('text', 'Ke$ha').isValidAlphaNumericText(), false, "'Ke$ha' is not valid text.");
+        equal(setupInput('text', '!@#$%^&*()').isValidAlphaNumericText(), false, "'!@#$%^&*()' is not valid text.");
+        return equal(setupInput('text', '<a href="http://www.google.com>BadLink</a>"').isValidAlphaNumericText(), false, "html is not valid text.");
       };
     })(this));
     test("Numeric Input Test", (function(_this) {
@@ -27,34 +27,34 @@
     })(this));
     test("Email input Test", (function(_this) {
       return function() {
-        equal(setupInput('email', 'John@email.com').isValidEmailInput(), true, "'John@email.com' is Valid!");
-        equal(setupInput('email', '123Joe@email.com').isValidEmailInput(), true, "'123Joe@email.com' is Valid!");
-        equal(setupInput('email', '').isValidEmailInput(), false, "'' is Invalid!");
-        equal(setupInput('email', 'John doe@email.com').isValidEmailInput(), false, "'John doe@email.com' is Invalid!");
-        equal(setupInput('email', 'John@').isValidEmailInput(), false, "'John@' is Invalid!");
-        equal(setupInput('email', 'John.com').isValidEmailInput(), false, "'John.com' is Invalid!");
-        equal(setupInput('email', '@.com').isValidEmailInput(), false, "'@.com' is Invalid!");
-        return equal(setupInput('email', '@doe.com').isValidEmailInput(), false, "'@doe.com' is Invalid!");
+        equal(setupInput('email', 'John@email.com').isValidEmail(), true, "'John@email.com' is Valid!");
+        equal(setupInput('email', '123Joe@email.com').isValidEmail(), true, "'123Joe@email.com' is Valid!");
+        equal(setupInput('email', '').isValidEmail(), false, "'' is Invalid!");
+        equal(setupInput('email', 'John doe@email.com').isValidEmail(), false, "'John doe@email.com' is Invalid!");
+        equal(setupInput('email', 'John@').isValidEmail(), false, "'John@' is Invalid!");
+        equal(setupInput('email', 'John.com').isValidEmail(), false, "'John.com' is Invalid!");
+        equal(setupInput('email', '@.com').isValidEmail(), false, "'@.com' is Invalid!");
+        return equal(setupInput('email', '@doe.com').isValidEmail(), false, "'@doe.com' is Invalid!");
       };
     })(this));
     return test("Phone input Test", (function(_this) {
       return function() {
-        equal(setupInput('text', '11234567891').isValidPhoneInput(), true, "'11234567891' is Valid!");
-        equal(setupInput('text', '1234567891').isValidPhoneInput(), true, "'1234567891' is Valid!");
-        equal(setupInput('text', '1 (123)456-7891').isValidPhoneInput(), true, "'1 (123)456-7891' is Valid!");
-        equal(setupInput('text', '1(123)456-7891').isValidPhoneInput(), true, "'1(123)456-7891' is Valid!");
-        equal(setupInput('text', '(123)456-7891').isValidPhoneInput(), true, "'(123)456-7891' is Valid!");
-        equal(setupInput('text', '1 123 456-7891').isValidPhoneInput(), true, "'1 123 456-7891' is Valid!");
-        equal(setupInput('text', '123 456-7891').isValidPhoneInput(), true, "'123 456-7891' is Valid!");
-        equal(setupInput('text', '1 123 456-7891').isValidPhoneInput(), true, "'1 123 456-7891' is Valid!");
-        equal(setupInput('text', '123 456 7891').isValidPhoneInput(), true, "'123 456 7891' is Valid!");
-        equal(setupInput('text', '123abc7891').isValidPhoneInput(), false, "'123abc7891' is Invalid!");
-        equal(setupInput('text', '123 abc 7891').isValidPhoneInput(), false, "'123 abc 7891' is Invalid!");
-        equal(setupInput('text', '!@#1237891').isValidPhoneInput(), false, "'!@#1237891' is Invalid!");
-        equal(setupInput('text', '123').isValidPhoneInput(), false, "'123' is Invalid!");
-        equal(setupInput('text', '123456789123456789').isValidPhoneInput(), false, "'123456789123456789' is Invalid!");
-        equal(setupInput('text', '12345678').isValidPhoneInput(), false, "'12345678' is Invalid!");
-        return equal(setupInput('text', '').isValidPhoneInput(), false, "'' is Invalid!");
+        equal(setupInput('text', '11234567891').isValidPhoneNumber(), true, "'11234567891' is Valid!");
+        equal(setupInput('text', '1234567891').isValidPhoneNumber(), true, "'1234567891' is Valid!");
+        equal(setupInput('text', '1 (123)456-7891').isValidPhoneNumber(), true, "'1 (123)456-7891' is Valid!");
+        equal(setupInput('text', '1(123)456-7891').isValidPhoneNumber(), true, "'1(123)456-7891' is Valid!");
+        equal(setupInput('text', '(123)456-7891').isValidPhoneNumber(), true, "'(123)456-7891' is Valid!");
+        equal(setupInput('text', '1 123 456-7891').isValidPhoneNumber(), true, "'1 123 456-7891' is Valid!");
+        equal(setupInput('text', '123 456-7891').isValidPhoneNumber(), true, "'123 456-7891' is Valid!");
+        equal(setupInput('text', '1 123 456-7891').isValidPhoneNumber(), true, "'1 123 456-7891' is Valid!");
+        equal(setupInput('text', '123 456 7891').isValidPhoneNumber(), true, "'123 456 7891' is Valid!");
+        equal(setupInput('text', '123abc7891').isValidPhoneNumber(), false, "'123abc7891' is Invalid!");
+        equal(setupInput('text', '123 abc 7891').isValidPhoneNumber(), false, "'123 abc 7891' is Invalid!");
+        equal(setupInput('text', '!@#1237891').isValidPhoneNumber(), false, "'!@#1237891' is Invalid!");
+        equal(setupInput('text', '123').isValidPhoneNumber(), false, "'123' is Invalid!");
+        equal(setupInput('text', '123456789123456789').isValidPhoneNumber(), false, "'123456789123456789' is Invalid!");
+        equal(setupInput('text', '12345678').isValidPhoneNumber(), false, "'12345678' is Invalid!");
+        return equal(setupInput('text', '').isValidPhoneNumber(), false, "'' is Invalid!");
       };
     })(this));
   });
