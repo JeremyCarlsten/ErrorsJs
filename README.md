@@ -77,7 +77,7 @@ Methods
 
   Returns: Boolean
 ```javascript
-  var valid = "My String".isValidAlphaNumericInput();
+  var valid = "My String".isValidAlphaNumericText();
 ```
 
 ######isValidNumber()
@@ -91,12 +91,20 @@ Methods
 
   Returns: Boolean
 ```javascript
-  var valid = "johnDoe@email.com".isValidEmailInput();
+  var valid = "johnDoe@email.com".isValidEmail();
 ```
 
 ######isValidPhoneNumber()
 
   Returns: Boolean
 ```javascript
-  var valid = "(123) 456-7890".isValidPhoneInput();
+  var valid = "(123) 456-7890".isValidPhoneNumber();
+```
+
+
+######isValidDate()
+
+  Returns: Boolean
+```javascript
+  var valid = "01/01/2000".isValidDate();
 ```
