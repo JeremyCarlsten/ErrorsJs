@@ -19,10 +19,17 @@ $.fn.isValidPhoneNumber = ->
   value = $(this).val().trim()
 
   if matchesPattern(value, allowedPattern)
-    value = value.replace(/[\s\.\-\(\)]+/g, "");
+    value = value.replace(/[\s\.\-\(\)]+/g, "")
     if isAllDigits.test(value) and value.length in [7,10,11]
       return true
 
   false
 
+$.fn.isValidDate = ->
+  value = $(this).val().trim()
+  allowedPattern = /^\d{1,2}[\/\-\s]{0,1}\d{1,2}[\/\-\s]{0,1}\d{2,4}$/
 
+  if matchesPattern(value, allowedPattern)
+    true
+  else
+    false

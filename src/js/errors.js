@@ -34,4 +34,15 @@
     return false;
   };
 
+  $.fn.isValidDate = function() {
+    var allowedPattern, value;
+    value = $(this).val().trim();
+    allowedPattern = /^\d{1,2}[\/\-\s]{0,1}\d{1,2}[\/\-\s]{0,1}\d{2,4}$/;
+    if (matchesPattern(value, allowedPattern)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
 }).call(this);
