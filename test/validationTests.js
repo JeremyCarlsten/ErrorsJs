@@ -37,7 +37,7 @@
         return equal(setupInput('email', '@doe.com').isValidEmail(), false, "'@doe.com' is Invalid!");
       };
     })(this));
-    return test("Phone input Test", (function(_this) {
+    test("Phone input Test", (function(_this) {
       return function() {
         equal(setupInput('text', '11234567891').isValidPhoneNumber(), true, "'11234567891' is Valid!");
         equal(setupInput('text', '1234567891').isValidPhoneNumber(), true, "'1234567891' is Valid!");
@@ -55,6 +55,23 @@
         equal(setupInput('text', '123456789123456789').isValidPhoneNumber(), false, "'123456789123456789' is Invalid!");
         equal(setupInput('text', '12345678').isValidPhoneNumber(), false, "'12345678' is Invalid!");
         return equal(setupInput('text', '').isValidPhoneNumber(), false, "'' is Invalid!");
+      };
+    })(this));
+    return test("Date input test", (function(_this) {
+      return function() {
+        equal(setupInput('text', '01/01/2000').isValidDate(), true, "'01/01/2000' is Valid!");
+        equal(setupInput('text', '1/1/2000').isValidDate(), true, "'1/1/2000' is Valid!");
+        equal(setupInput('text', '01-01-2000').isValidDate(), true, "'01-01-2000' is Valid!");
+        equal(setupInput('text', '1-1-2000').isValidDate(), true, "'1-1-2000' is Valid!");
+        equal(setupInput('text', '112000').isValidDate(), true, "'112000' is Valid!");
+        equal(setupInput('text', '01012000').isValidDate(), true, "'01012000' is Valid!");
+        equal(setupInput('text', '01012000').isValidDate(), true, "'01012000' is Valid!");
+        equal(setupInput('text', 'Jan 1st 2000').isValidDate(), false, "'Jan 1st 2000' is Invalid(For Now)");
+        equal(setupInput('text', '0101200011').isValidDate(), false, "'0101200011' is InValid!");
+        equal(setupInput('text', '!@#$%^&*()').isValidDate(), false, "'!@#$%^&*()' is InValid!");
+        equal(setupInput('text', ' ').isValidDate(), false, "' ' is InValid!");
+        equal(setupInput('text', 'abc').isValidDate(), false, "'abc' is InValid!");
+        return equal(setupInput('text', 'abc123').isValidDate(), false, "'abc123' is InValid!");
       };
     })(this));
   });
