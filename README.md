@@ -3,11 +3,12 @@ ErrorsJs
 
 A Client Side jquery plugin for handling errors.
 
+[![Build Status](https://travis-ci.org/JeremyCarlsten/ErrorsJs.png?branch=master)](https://travis-ci.org/JeremyCarlsten/ErrorsJs)
 
 How to Use 
 ----------
 
-Step 1: Download the [minified js] (https://github.com/JeremyCarlsten/ErrorsJs/blob/master/errors-1.0.min.js) (Right click and save as)
+Step 1: Download the [minified js] (https://github.com/JeremyCarlsten/ErrorsJs/blob/master/distribution/errors-1.1.min.js) (Right click and save as)
 
 Step 2: Ensure you have [jquery](http://jquery.com/) included on your page
 
@@ -32,7 +33,7 @@ Example 1:
     $(document).ready(function(){
     
       $("full-name").on('change', function(event){
-        if($("full-name").isValidAlphaNumericInput()){
+        if($("full-name").isValidAlphaNumericText()){
           alert("It's All Good");
         else{
           event.preventDefault();
@@ -57,7 +58,7 @@ Example 2 (They are all pretty much the same, change the method):
     $(document).ready(function(){
     
       $("email").on('change', function(event){
-        if($("full-name").isValidEmailInput()){
+        if($("full-name").isValidEmail()){
           alert("It's All Good");
         else{
           event.preventDefault();
@@ -72,11 +73,11 @@ Example 2 (They are all pretty much the same, change the method):
 Methods
 -------
 
-######isValidAlphaNumericInput()
+######isValidAlphaNumericText()
 
   Returns: Boolean
 ```javascript
-  var valid = "My String".isValidAlphaNumericInput();
+  var valid = "My String".isValidAlphaNumericText();
 ```
 
 ######isValidNumber()
@@ -86,16 +87,24 @@ Methods
   var valid = "123456798".isValidNumber();
 ```
 
-######isValidEmailInput()
+######isValidEmail()
 
   Returns: Boolean
 ```javascript
-  var valid = "johnDoe@email.com".isValidEmailInput();
+  var valid = "johnDoe@email.com".isValidEmail();
 ```
 
-######isValidPhoneInput()
+######isValidPhoneNumber()
 
   Returns: Boolean
 ```javascript
-  var valid = "(123) 456-7890".isValidPhoneInput();
+  var valid = "(123) 456-7890".isValidPhoneNumber();
+```
+
+
+######isValidDate()
+
+  Returns: Boolean
+```javascript
+  var valid = "01/01/2000".isValidDate();
 ```
