@@ -1,7 +1,7 @@
 ErrorsJs
 ========
 
-A Client Side jquery plugin for handling errors.
+A Client Side jquery plugin for catching errors. Feel free to post an issue or pull request for more features.
 
 [![Build Status](https://travis-ci.org/JeremyCarlsten/ErrorsJs.png?branch=master)](https://travis-ci.org/JeremyCarlsten/ErrorsJs)
 
